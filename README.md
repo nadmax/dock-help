@@ -28,6 +28,12 @@ docker images # List local images
 docker rmi <image_name> # Delete an image
 docker image prune # Remove all unused images
 docker rmi -f $(docker images -aq) # Delete all images
+docker inspect <image_name> # Show low-level image info (in JSON format)
+docker history <image_name> # Show the image history by listing its ancestors
+docker tag <repo_name>/<image_name>|<image_name>:<tag_name> # Tag an image
+docker push <repo_name>/<image_name>|<image_name>:<tag_name> # Push an image/repo to a registry
+docker pull <repo_name>/<image_name>|<image_name>:<tag_name> # Pull an image/repo from a registry
+docker search <text> # Search an image on the official registry
 ```
 
 ## Containers
@@ -47,4 +53,7 @@ docker ps # List currently running containers
 docker ps -a|--all # List running and stopped containers
 docker ps -q # Only list container IDs
 docker container stats # View resource usage stats
+docker commit <container_name> <image_name> # Commit a snapshot of the container
 ```
+
+## Volumes
