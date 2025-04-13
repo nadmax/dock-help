@@ -1,0 +1,57 @@
+# FROM: Start from a base image
+FROM ubuntu:22.04
+
+# LABEL: Add metadata
+LABEL maintainer="you@example.com"
+LABEL version="1.0"
+LABEL description="Example Dockerfile using all instructions"
+
+# ARG: Define build-time variables
+ARG APP_ENV=production
+
+# ENV: Set environment variables
+ENV APP_HOME=/usr/src/app \
+    APP_ENV=${APP_ENV}
+
+# WORKDIR: Set working directory
+WORKDIR $APP_HOME
+
+# ADD: Add files (can fetch from URL or extract archives)
+ADD https://example.com/sample.tar.gz /tmp/
+
+# COPY: Copy files from the host machine
+COPY . $APP_HOME
+
+# RUN: Execute commands to install dependencies or build the app
+RUN apt-get update && \
+    apt-get install -y curl && \
+    rm -rf /var/lib/apt/lists/*
+
+# SHELL: Set default shell
+SHELL ["/bin/bash", "-c"]
+
+# EXPOSE: Inform Docker that the container listens on the given port
+EXPOSE 8080
+
+# USER: Set the user to use when running the image
+USER user01
+
+# VOLUME: Define mount point for external volume
+VOLUME ["/data"]
+
+# ENTRYPOINT: Set the default executable
+ENTRYPOINT ["./start.sh"]
+
+# CMD: Provide default arguments to ENTRYPOINT or command to run
+# If you have more than one CMD, only the last one takes effect.
+CMD ["--help"]
+
+# ONBUILD: Instructions to run when image is used as a base in another Dockerfile
+ONBUILD COPY . /app
+
+# STOPSIGNAL: Define system signal used to stop container
+STOPSIGNAL SIGTERM
+
+# HEALTHCHECK: Container health check
+HEALTHCHECK --interval=30s --timeout=10s \
+  CMD curl -f http://localhost:8080/health || exit 1
