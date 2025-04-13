@@ -1,0 +1,38 @@
+services:
+  frontend:
+    image: example/webapp # Use a prebuilt image named 'example/webapp' for the frontend service
+    ports:
+      - "443:8043" # Map host port 443 (HTTPS) to container port 8043
+    networks:
+      - front-tier # Connect frontend to the front-tier network (e.g., public-facing)
+      - back-tier # Also connect frontend to the back-tier network (to talk to backend)
+    configs:
+      - httpd-config # Attach an external config (e.g., Apache or NGINX configuration)
+    secrets:
+      - server-certificate # Attach an external secret (like an SSL/TLS certificate)
+
+  backend:
+    image: example/database # Use a prebuilt image named 'example/database' for the backend service
+    volumes:
+      - db-data:/etc/data # Mount a named volume 'db-data' to /etc/data in the container
+    networks:
+      - back-tier # Backend is only connected to the back-tier network
+
+volumes:
+  db-data:
+    driver: flocker # Use the 'flocker' volume driver for storage orchestration
+    driver_opts:
+      size: "10GiB" # Set volume size option to 10 GiB (driver-specific)
+
+configs:
+  httpd-config:
+    external: true # Declare this config as externally managed (must exist in the Docker config store)
+
+secrets:
+  server-certificate:
+    external: true # Declare this secret as externally managed (must exist in the Docker secrets store)
+
+networks:
+  # The presence of these objects is sufficient to define them
+  front-tier: {} # Define an empty/customizable front-tier network (external/public-facing)
+  back-tier: {} # Define an empty/customizable back-tier network (internal only)
