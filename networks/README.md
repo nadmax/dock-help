@@ -5,6 +5,8 @@ A container only sees a network interface with an IP address, a gateway, a routi
 
 You can create custom networks, and connect multiple containers to the same network.  
 Once connected to a custom network, containers can communicate with each other using container IP addresses or container names.
+
+Here are some examples of Docker commands related to networks:
 ```bash
 docker network create -d <driver_type> <network_name> # Create a custom network by specifying driver
 docker network ls # List networks
@@ -15,6 +17,7 @@ docker network rm <network_name> # Delete network
 docker network prune # Delete unused networks
 docker run -d -v <source_volume>:<target_directory> <image_name>  --name <container_name> --network <driver_type> <image_name> # Start a container with a volume mount from a network driver
 ```
+
 ## Drivers
 Drivers are pluggable interfaces implementing networking functionality for containers.  
 Docker provides built-in network drivers for common use cases, including multi-host networking and encryption.  

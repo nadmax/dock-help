@@ -1,7 +1,7 @@
 # Docker Compose
 Docker Compose is a tool for defining and running multi-container applications.  
 Compose simplifies the control of your entire application stack, making it easy to manage services, networks, and volumes in a single YAML configuration file.  
-With a single command, you can create and start all the services from your configuration file. (see commands examples below)
+With a single command, you can create and start all the services from your configuration file. (see examples of compose commands below)
 
 ```bash
 docker compose up -d # Start all detached services defined in compose.yaml file
