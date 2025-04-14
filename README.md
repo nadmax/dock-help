@@ -3,7 +3,7 @@
 
 **This document is the complete version with every Docker feature explained.**
 
-Below is a list of the current state of feature explanations:  
+Below is a list of the current state of feature explanations *(🟢 means completed, 🟡 means in progress, 🔴 means not covered)*:  
 🟢 [Images](https://github.com/nadmax/dock-help/blob/master/images/README.md)  
 🟢 [Containers](https://github.com/nadmax/dock-help/blob/master/containers/README.md)  
 🟢 [Volumes](https://github.com/nadmax/dock-help/blob/master/storages/volumes/README.md)  
