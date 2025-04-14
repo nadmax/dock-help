@@ -1,24 +1,23 @@
 # dock-help
-![Docker Logo](https://github.com/nadmax/dock-help/blob/master/assets/docker.png)
+![Docker Logo](https://github.com/nadmax/dock-help/blob/master/assets/docker.png)  
+**This document is the complete version with each Docker feature explained.**  
+**See the list of features explained below if you want to see just one feature that interests you.**
 
-**This document is the complete version with every Docker feature explained.**
-
-Below is a list of the current state of feature explanations *(🟢 means completed, 🟡 means in progress, 🔴 means not covered)*:  
-🟢 [Images](https://github.com/nadmax/dock-help/blob/master/images/README.md)  
-🟢 [Containers](https://github.com/nadmax/dock-help/blob/master/containers/README.md)  
-🟢 [Volumes](https://github.com/nadmax/dock-help/blob/master/storages/volumes/README.md)  
-🟢 [Bind mounts](https://github.com/nadmax/dock-help/blob/master/storages/bind/README.md)  
+## Features explained
+🟢 [Docker Images](https://github.com/nadmax/dock-help/blob/master/images/README.md)  
+🟢 [Docker Containers](https://github.com/nadmax/dock-help/blob/master/containers/README.md)  
+🟢 [Docker Volumes](https://github.com/nadmax/dock-help/blob/master/storages/volumes/README.md)  
+🟢 [Docker bind mounts](https://github.com/nadmax/dock-help/blob/master/storages/bind/README.md)  
 🟢 [Dockerfile](https://github.com/nadmax/dock-help/blob/master/dockerfile/README.md)  
-🟡 [Networks](https://github.com/nadmax/dock-help/blob/master/networks/README.md)    
+🟡 [Docker Networks](https://github.com/nadmax/dock-help/blob/master/networks/README.md)    
 🟡 [Docker Compose](https://github.com/nadmax/dock-help/blob/master/compose/README.md)  
-🔴 Context  
-🔴 System  
-🔴 Swarm
+🔴 Docker Context  
+🔴 Docker System  
+🔴 Docker Swarm
 
-Feel free to explore each Docker feature individually or together.
+(🟢 means completed, 🟡 means in progress, 🔴 means not covered)
 
 ## What is Docker?
-
 Docker is an open-source platform which provides the ability to package and run an application in an isolated environment called container.   
 Thanks to the isolation, it allows you to run many containers simultaneously on a given host.  
 
