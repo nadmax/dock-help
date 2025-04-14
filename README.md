@@ -1,9 +1,9 @@
 # dock-help
 ![Docker Logo](https://github.com/nadmax/dock-help/blob/master/assets/docker.png)  
 **This document is the complete version with each Docker feature explained.**  
-**See the list of features explained below if you want to see just one feature that interests you.**
+**See the list of features below if you want to see just one that interests you.**
 
-## Features explained
+## Docker features
 🟢 [Docker Images](https://github.com/nadmax/dock-help/blob/master/images/README.md)  
 🟢 [Docker Containers](https://github.com/nadmax/dock-help/blob/master/containers/README.md)  
 🟢 [Docker Volumes](https://github.com/nadmax/dock-help/blob/master/storages/volumes/README.md)  
@@ -15,7 +15,7 @@
 🔴 Docker System  
 🔴 Docker Swarm
 
-(🟢 means completed, 🟡 means in progress, 🔴 means not covered)
+*(🟢 means completed, 🟡 means in progress, 🔴 means not covered)*
 
 ## What is Docker?
 Docker is an open-source platform which provides the ability to package and run an application in an isolated environment called container.   
