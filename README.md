@@ -1,5 +1,5 @@
 # dock-help
-[!Docker Logo](https://github.com/nadmax/dock-help/blob/master/assets/docker.png)
+![Docker Logo](https://github.com/nadmax/dock-help/blob/master/assets/docker.png)
 
 **This document is the complete version with every Docker feature explained.**
 
