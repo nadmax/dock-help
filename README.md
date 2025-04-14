@@ -1,4 +1,6 @@
 # dock-help
+[!Docker Logo](https://github.com/nadmax/dock-help/blob/master/assets/docker.png)
+
 **This document is the complete version with every Docker feature explained.**
 
 Below is a list of the current state of feature explanations:  
@@ -36,7 +38,13 @@ docker info # Display system-wide information
 
 ## Images
 Before running a container, you need an image of your application.  
-A Docker image is a lightweight, standalone, executable package of software that includes everything needed to run an application (code, runtime, system tools, system libraries and settings).
+
+A Docker image is a lightweight, standalone, executable package of software that includes everything needed to run an application (code, runtime, system tools, system libraries and settings).  
+Once an image is created, it can't be modified.  
+You can only make a new image or add changes on top of it.  
+Images on a container are composed of layers, representing a set of file system changes that add, remove, or modify files.  
+
+Here are some examples of Docker commands related to images:
 ```bash
 docker build -t <image_name> . # Build an image from a Dockerfile
 docker build -t <image_name> . --no-cache # Build an image from a Dockerfile without the cache
@@ -57,6 +65,8 @@ A container is a runtime instance of a Docker image.
 A container will always run the same, regardless of the infrastructure.  
 
 They isolate software from its environment and ensure that it works uniformly despite differences for instance between development and staging.
+
+Here are some examples of Docker commands related to containers:
 ```bash
 docker run --name <container_name> <image_name> # Create and run a container from an image, with a custom name
 docker run -p <host_port>:<container_port> --name <container_name> <image_name> # Create and run a container with a custom name and publish a container's port to the host.
@@ -81,7 +91,9 @@ When you mount the volume into a container (see examples below), this directory 
 By default, mounted volumes are read-write volumes but you can mount a volume as read-only.
 
 Volumes are managed by Docker and are isolated from the core functionality of the host machine.
-If you need to access files or directories from both containers and the host, use bind mounts.  
+If you need to access files or directories from both containers and the host, use bind mounts.
+
+Here are some examples of Docker commands related to volumes:
 ```bash
 docker volume create <volume_name> # Create a new volume
 docker volume ls # List volumes
@@ -100,6 +112,8 @@ Which means, if you specified a mount path that doesn't exist on the host, it wi
 Both non-Docker processes on the host and container processes can modify the mounted files simultaneously.  
 
 Use bind mounts when you need to be able to access files from both the container and the host.
+
+Here are two examples of Docker commands related to bind mounts:
 ```bash
 docker run -d --name <container_name> --mount type=bind,src=<host-path>,dst=<container-path> <image_name> # Start a detached container with a bind mount
 docker run -d --name <container_name> --volume <host-path>:<container-path> <image_name> # Shortest way to start a detached container with a bind mount
@@ -112,6 +126,8 @@ A container only sees a network interface with an IP address, a gateway, a routi
 
 You can create custom networks, and connect multiple containers to the same network.  
 Once connected to a custom network, containers can communicate with each other using container IP addresses or container names.
+
+Here are some examples of Docker commands related to networks:
 ```bash
 docker network create -d <driver_type> <network_name> # Create a custom network by specifying driver
 docker network ls # List networks
@@ -122,6 +138,7 @@ docker network rm <network_name> # Delete network
 docker network prune # Delete unused networks
 docker run -d -v <source_volume>:<target_directory> <image_name>  --name <container_name> --network <driver_type> <image_name> # Start a container with a volume mount from a network driver
 ```
+
 ### Drivers
 Drivers are pluggable interfaces implementing networking functionality for containers.  
 Docker provides built-in network drivers for common use cases, including multi-host networking and encryption.  
@@ -164,7 +181,7 @@ Here's the instructions you can use:
 ## Docker Compose
 Docker Compose is a tool for defining and running multi-container applications.  
 Compose simplifies the control of your entire application stack, making it easy to manage services, networks, and volumes in a single YAML configuration file.  
-With a single command, you can create and start all the services from your configuration file. (see commands examples below)
+With a single command, you can create and start all the services from your configuration file. (see examples of compose commands below)
 
 ```bash
 docker compose up -d # Start all detached services defined in compose.yaml file

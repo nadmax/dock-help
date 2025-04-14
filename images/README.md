@@ -1,6 +1,12 @@
 # Images
 Before running a container, you need an image of your application.  
-A Docker image is a lightweight, standalone, executable package of software that includes everything needed to run an application (code, runtime, system tools, system libraries and settings).
+
+A Docker image is a lightweight, standalone, executable package of software that includes everything needed to run an application (code, runtime, system tools, system libraries and settings).  
+Once an image is created, it can't be modified.  
+You can only make a new image or add changes on top of it.  
+Images on a container are composed of layers, representing a set of file system changes that add, remove, or modify files.  
+
+Here are some examples of Docker commands related to images:
 ```bash
 docker build -t <image_name> . # Build an image from a Dockerfile
 docker build -t <image_name> . --no-cache # Build an image from a Dockerfile without the cache

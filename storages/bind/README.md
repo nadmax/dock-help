@@ -5,6 +5,8 @@ Which means, if you specified a mount path that doesn't exist on the host, it wi
 Both non-Docker processes on the host and container processes can modify the mounted files simultaneously.  
 
 Use bind mounts when you need to be able to access files from both the container and the host.
+
+Here are two examples of Docker commands related to bind mounts:
 ```bash
 docker run -d --name <container_name> --mount type=bind,src=<host-path>,dst=<container-path> <image_name> # Start a detached container with a bind mount
 docker run -d --name <container_name> --volume <host-path>:<container-path> <image_name> # Shortest way to start a detached container with a bind mount

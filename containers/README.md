@@ -3,6 +3,8 @@ A container is a runtime instance of a Docker image.
 A container will always run the same, regardless of the infrastructure.  
 
 They isolate software from its environment and ensure that it works uniformly despite differences for instance between development and staging.
+
+Here are some examples of Docker commands related to containers:
 ```bash
 docker run --name <container_name> <image_name> # Create and run a container from an image, with a custom name
 docker run -p <host_port>:<container_port> --name <container_name> <image_name> # Create and run a container with a custom name and publish a container's port to the host.
