@@ -158,4 +158,4 @@ docker compose logs # Monitor running containers output
 docker compose ps # List all the services with their current status
 ```
 
-[View the compose.yaml configuration file example here](https://github.com/nadmax/dock-help/blob/master/compose.example.yaml)
+[View the compose file example here](https://github.com/nadmax/dock-help/blob/master/compose.example.yaml)
